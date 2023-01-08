@@ -3,12 +3,12 @@ import time
 from GetNotice import get_notice
 
 
-def looping():
+def looping(refresh_period=300):
     start = time.time()
     get_notice()
     end = time.time()
     print(end - start)
-    threading.Timer(10, looping).start()
+    threading.Timer(refresh_period, looping).start()
 
 
 if __name__ == '__main__':
